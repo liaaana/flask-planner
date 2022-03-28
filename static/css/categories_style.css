@@ -1,0 +1,79 @@
+body {
+	background: #ECF3F5;
+	display: flex;
+	justify-content: right;
+	align-items: right;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+
+}
+.categories h5{
+    margin: 2vw;
+}
+
+.categories .add-bth:hover{
+    background:  linear-gradient(to bottom, #4799F9, #51F9CD);
+    border-bottom: 1px solid #51F9CD;
+
+}
+.categories .add-bth{
+    color: white;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid transparent;
+    background-color: #929292;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    margin: 3vh 5vw;
+    margin-right: 2vw;
+}
+.categories .category {
+	background-color: #fff;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	width: 90vw;
+    margin: 3vh 5vw;
+    padding-bottom: 3vh;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.12), 
+    0 10px 10px rgba(0,0,0,0.1);
+}
+
+.categories .edit-btn, .categories .delete-btn{
+    width: 15pt;
+    height: 15pt;
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 1vw;
+}
+.categories p{
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+.categories .cbx{
+    width: calc(100vw - 4vw - 10vw);
+    margin: 1vh 1vw;
+}
+.categories .cbx label{
+    font-size: 1rem;
+}
+
+.categories a{
+    text-decoration: none;
+}
+
+.categories .cbx{
+    background-color:#ECF3F5;
+    padding: 1vw 1vw;
+    padding-bottom: 0.8vw;
+    border: 2px solid transparent;
+    border-radius: 20px;
+}
+

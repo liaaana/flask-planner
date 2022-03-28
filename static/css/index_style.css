@@ -1,0 +1,27 @@
+section{
+    height: 500px;
+    padding: 2vh 1vw;
+}
+h5{
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-size: 0.98rem;
+    background: linear-gradient(to bottom, #4799F9, #51F9CD); /* Градиент для текста */
+    -webkit-background-clip: text; /* Обрезаем фон по тексту */
+    -webkit-text-fill-color: transparent; 
+}
+.h5-bottom{
+    margin: 0;
+}
+#introduction{
+    background-color: #ECF3F5;
+}
+
+#description{
+    
+}
+
+#conclusion{
+    background-color: #ECF3F5;
+    margin-bottom: -10vh;
+}

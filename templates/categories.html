@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="../static/css/categories_style.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="categories">
+    <a href="/category_add" class="add-bth">Добавить категорию</a>
+    <div class='category'>
+    <h5>Категории</h5>
+        {% for category in categories %}
+        <div class="cbx">
+                {% if category.user_id == current_user.id and category.name != 'Без категории' %}
+                    <p>{{category.name}}</p>
+
+                    <a href="/category_delete_with_tasks/{{ category.id }}" title='C удалением задач'>
+                        <img src="../static/img/cancel.svg" alt="удалить " class='delete-btn'>
+                    </a>
+                    <a href="/category_delete/{{ category.id }}" title='Без удаления задач'>
+                        <img src="../static/img/delete.svg" alt="удалить" class='delete-btn'>
+                    </a>
+                    <a href="/category_edit/{{ category.id }}">
+                        <img src="../static/img/edit.svg" alt="изменить" class='edit-btn'>
+                    </a>
+                {% else %}
+                    <p>{{category.name}}</p>
+                {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

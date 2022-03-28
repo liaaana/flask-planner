@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="../static/css/tasks_style.css">
+{% endblock %}
+
+{% block content %}
+<div class="tasks">
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+        <a href="/task_add" class="add-bth">Добавить задачу</a>
+        {{ form.submit(type="submit", class="submit-bth") }}
+        {% for ctg in t_c.keys() %}
+            {% if t_c[ctg] != [] %}
+                <div class='category'>
+                <h5>{{ ctg }}</h5>
+                {% for task in t_c[ctg] %}
+                    <div class="cbx">
+                        <div class="cbx-content">
+                            {% if task.is_done %}
+                                <input id={{task.id}} name='tasks' type="checkbox" value={{task.id}} checked>
+                                <label for={{task.id}} class='done'>{{task.title}}</label>
+                            {% else %}
+                                <input id={{task.id}} name='tasks' type="checkbox" value={{task.id}}>
+                                <label for={{task.id}}>{{task.title}}</label>
+                            {% endif %}
+                            <a href="/task_delete/{{ task.id }}">
+                                <img src="../static/img/delete.svg" alt="удалить" class='delete-btn'>
+                            </a>
+                            <a href="/task_edit/{{ task.id }}">
+                                <img src="../static/img/edit.svg" alt="изменить" class='edit-btn'>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        </form> 
+</div>
+{% endblock %}

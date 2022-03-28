@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="../static/css/login_register_style.css">
+{% endblock %}
+
+{% block content %}
+
+{% if login==True %}
+<div class="container " id="container">
+{% else %}
+<div class="container right-panel-active" id="container">
+{% endif %}
+	<div class="form-container sign-up-container">
+		<form action="" method="post">
+			<h2>Регистрация</h2>
+			{{ form_register.hidden_tag() }}
+			<p>
+				{{ form_register.register_email(class="form-input form-control", type="email") }}
+			</p>
+			<p>
+				{{ form_register.register_password(class="form-input form-control", type="password") }}
+			</p>
+			<p>
+				{{ form_register.register_password_again(class="form-input form-control", type="password") }}
+			</p>
+			<p>
+				{{ form_register.register_surname(class="form-input form-control") }}
+			</p>
+			<p>
+				{{ form_register.register_name(class="form-input form-control") }}
+			</p>
+			<p>{{ form_register.register_submit(type="submit", class="button") }}</p>
+			<p class='message'>{{ register_message}}</p>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="" method="post">
+			{{ form_login.hidden_tag() }}
+			<h2>Авторизация</h2>
+            <p>
+                {{ form_login.login_email(type="email", class='form-input form-control') }}
+            </p>
+            <p>
+                {{ form_login.login_password(type="password", class='form-input form-control') }}
+            </p>
+            <p>{{ form_login.login_remember_me() }} {{ form_login.login_remember_me.label() }}</p>
+			<p>{{ form_login.login_submit(type="submit", class="button") }}</p>
+            <p class='message'>{{ login_message }}</p>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h2>Добро пожаловать!</h2>
+				<p>Создайте аккаунт, чтобы продолжить</p>
+				<button class="ghost" id="signIn">Войти</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h2>Ура, Вы вернулись!</h2>
+				<p>Авторизируйтесь, чтобы продолжить</p>
+				<button class="ghost" id="signUp">Создать аккаунт</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../static/js/login_js.js"></script>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="../static/css/category_add_style.css">
+{% endblock %}
+
+{% block content %}
+<div class="add_category">
+<h2>{{ title }}</h2>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.name(class="form-control") }}<br>
+    </p>
+    <p>
+        {{ form.color(class="form-control") }}<br>
+    </p>
+    <p>{{ form.submit(type="submit", class="button") }}</p>
+    <p class='message'>{{message}}</p>
+</form>
+</div>
+{% endblock %}

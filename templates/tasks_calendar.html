@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="../../static/css/tasks_calendar_style.css">
+<link rel="stylesheet" href="../../static/css/base_style.css">
+{% endblock %}
+
+{% block content %}
+<div class="calendar-container">
+    <div class="calendar-header">
+      <h1>
+        <a href="../../tasks_calendar/{{ pre_date.year }}/{{ pre_date.month}}"><img class='arrow' src="../../static/img/left_arrow.svg" alt="стрелка назад"></a>
+         {{ months[month] }}
+        <a href="../../tasks_calendar/{{ next_date.year }}/{{ next_date.month}}"><img class='arrow' src="../../static/img/right_arrow.svg" alt="стрелка вперёд"></a>
+      </h1>
+      <p>{{ year }}</p>
+    </div>
+    <div class="calendar"><span class="day-name">ПН</span><span class="day-name">ВТ</span><span class="day-name">СР</span><span class="day-name">ЧТ</span><span class="day-name">ПТ</span><span class="day-name">СБ</span><span class="day-name">ВС</span>
+        {% for day in dates %}
+        {% if day.month != month %}
+            <div class="day day--disabled">{{day.day}}
+                {% if day in dates_tasks.keys() %}
+                    {% for task in dates_tasks[day] %}
+                    {% if task.is_done %}
+                        <section class="task done" style='--bc: {{categories[task.category_id].color}}' >{{task.title}}</section>
+                    {% else %}
+                        <section class="task" style='--bc: {{categories[task.category_id].color}}' >{{task.title}}</section>
+                    {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        {% else %}
+            <div class="day">{{day.day}}
+                {% if day in dates_tasks.keys() %}
+                    {% for task in dates_tasks[day] %}
+                        {% if task.is_done %}
+                            <section class="task done" style='--bc: {{categories[task.category_id].color}}' >{{task.title}}</section>
+                        {% else %}
+                            <section class="task" style='--bc: {{categories[task.category_id].color}}' >{{task.title}}</section>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+  </div>
+  </div>
+{% endblock %}
