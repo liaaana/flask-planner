@@ -238,7 +238,7 @@ def add_task():
 |----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
 | Registration and authorization take place on one page, and it is impossible to connect 2 functions to one page | Create 2 different forms and perform processing depending on the form sent. | 
 | Each task should have a category, but when a user tries to create the first task, it may not have any category | Automatically create a category when a new user is added                    |
-| In this project I put into practice the knowledge of the course flask but I wanted to have beautiful design    | I used designs from public sources and YouTube tutorials                    |
+| In this project I put into practice the knowledge of the course flask but I wanted to have a beautiful design    | I used designs from public sources and YouTube tutorials                    |
 
 
 ### All functions
