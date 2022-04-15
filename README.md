@@ -33,7 +33,7 @@ python3 main.py
 ```
 
 
-### Example of creating a "task_add" function.
+### Example of creating a "add_task" function.
 
 **1. Creating a task model, where you specify what parameters each task has.**
 
